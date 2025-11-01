@@ -1,0 +1,21 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.tictactoe.app
+productName: Tic-Tac-Toe
+files:
+  - filter:
+      - '**/*'
+      - '!node_modules/**/*'
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+  sign: false
+  verifyUpdateCodeSignature: false
+portable:
+  artifactName: ${productName}-Portable.exe
+nsis:
+  oneClick: false
+electronVersion: 39.0.0
