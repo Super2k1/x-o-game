@@ -2,9 +2,7 @@
   "name": "tic-tac-toe-desktop",
   "version": "1.0.0",
   "description": "Tic-Tac-Toe Desktop Game built with Electron",
-  
   "main": "main.js",
-  
   "scripts": {
     "start": "electron .",
     "clean": "if exist dist rmdir /s /q dist",
@@ -12,44 +10,42 @@
     "build": "electron-builder --win --x64",
     "build:dir": "electron-builder --win --dir"
   },
-  
-  "keywords": ["electron", "game", "tic-tac-toe"],
+  "keywords": [
+    "electron",
+    "game",
+    "tic-tac-toe"
+  ],
   "author": "Your Name",
   "license": "MIT",
-  
   "devDependencies": {
-    "electron": "^27.0.0",
+    "electron": "^39.0.0",
     "electron-builder": "^24.6.4"
   },
-  
   "build": {
     "appId": "com.tictactoe.app",
     "productName": "Tic-Tac-Toe",
-    
     "directories": {
       "output": "dist"
     },
-    
     "files": [
       "**/*",
       "!node_modules/**/*"
     ],
-    
     "win": {
       "target": [
         {
           "target": "portable",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "sign": false,
       "verifyUpdateCodeSignature": false
     },
-    
     "portable": {
       "artifactName": "${productName}-Portable.exe"
     },
-    
     "nsis": {
       "oneClick": false
     }
